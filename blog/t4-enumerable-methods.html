@@ -23,13 +23,13 @@
 <h1>Enumerable Methods</h1>
 <h2>08.23.15</h2>
 
-<p1>
+<p>
 	This week we learned about Enumerable Methods in Ruby and how we can use them effectively. This week, I was able to use the .map method and I'll explain how and why you would use this method. 
-</p1>
-<p2>
+</p>
+<p>
 	But first, what are Enumerables? Enumerables are "modules", which in simple terms means that it is a bundle of methods packaged as one that can be mixed in with other classes (like arrays and hashes). As long as that class has its own #each method, the enumerable can use that to iterate on all of it's inputs. 
-</p2>
-<p3>
+</p>
+<p>
 	So, now what does .map do? It's actually the exact same in function to the .collect enumerable method. What collect and map do is that they run your block of code that you want to use to change your inputs and gives you another object filled with the results.
 	Here's a simple example:
 	'''Ruby
@@ -39,7 +39,7 @@
 	'''
 
 	We are passing the array of [1,5,7] and adding 2 to each of those numbers through our block {|num| num + 2}. Then the map enumerable method allows us to have a new object with all of the outputs. In this case, it spits out another array with [3,7,9]. 
-</p3>
+</p>
 	
 </body>
 </html>
