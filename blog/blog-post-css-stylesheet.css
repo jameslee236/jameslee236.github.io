@@ -1,11 +1,62 @@
-
+html {
+	background-color: #B2413A;
+	font-family: Tahoma;
+}
 
 h1 {
-	font-size: 18px;
-	font-family: Tahoma;
+	font-size: 36px;
+	margin-left: 190px;
+	margin-top: 60px;
+	color: black;
+}
+
+h2 {
+	font-size: 11px;
+	margin-left: 190px;
+} /*date-time*/
+
+hr {
+	margin-left: 190px;
+	margin-right: 400px;
+}
+
+.indeximg {
+	margin-right: 400px;
+	padding-left: 190px;
+	width: 600px;
+	height: 350px;
+}
+
+a {
+	color: inherit;
 }
 
 p {
-	font-size: 12px;
-	font-family: Tahoma;
+	padding-right: 400px;
+	padding-left: 190px;
 }
+
+.toolbar {
+	float: right;
+	margin-top: -50px;
+	margin-right: 400px;
+}
+
+.menu {
+	padding-bottom: 50px;
+	float: left;
+	width: 240px;
+	position: relative;
+	list-style-type: none;
+	text-decoration: none;
+	display: block;
+	margin-top: -188px;
+	margin-left: 5px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.navbar {
+	padding-left: 189px;
+	font-size: 12px;
+} /*previous|next*/
