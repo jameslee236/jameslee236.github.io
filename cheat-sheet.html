@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ruby and JS Loops CheatSheet</title>
+        <link rel="stylesheet" type="text/css" href='cheat-sheet-styling.css'>
+
+</head>
+
+<body>
+<div id="left_bar">
+<h1>Ruby</h1>
+<p>
+<span class='sub-head'>Loop Structure</span> <br>
+<code>for variable [, variable...] in expression <br>
+[do] <br>
+code <br>
+end <br>
+</code>
+</p>
+
+
+<p>
+<span class='sub-head'>'For' Example</span> <br>
+<code>
+for i in 0..5 <br>
+puts "value of local variable is #{i}" <br>
+end <br>
+</code>
+</p>
+
+
+<p>
+<span class='sub-head'>'While' Example</span> <br>
+<code>
+while x >= 0 <br>
+puts x <br>
+x = x -1 <br>
+end <br>
+</code>
+</p>
+
+
+<p>
+<span class='sub-head'>Iterating through Each</span> <br>
+Example: <br>
+<code>
+a = ['a','b','c'] <br>
+a.each {|n| puts n} <br>
+end <br>
+</code>
+</p>
+
+
+<p>
+<span class='sub-head'>Methods</span> <br>
+<code>
+	def hello <br>
+		puts "hello" <br>
+	end <br>
+</code>
+</p>
+
+
+<p>
+<span class='sub-head'>Hashes</span> <br>
+	<code>hash_name = {hash_key: hash_value} <br> </code>
+	Access by using: <br>
+	hash_name[:hash_key] —-> hash_value <br>
+</p>
+</div>
+
+<!-- Line Break -->
+<div id="right_bar">
+<h3>JavaScript</h3>
+
+<p>
+<span class='sub-head'>Loop Structure</span> <br>
+for (statement 1; statement 2; statement 3) { <br>
+	code block to be executed <br>
+} <br>
+Statement 1 - executed before the loop starts. <br>
+Statement 2 - defines the condition for running. <br>
+Statement 3 - executed each time after the loop runs. <br>
+</p>
+
+
+<p>
+<span class='sub-head'>'For..in' Example</span> <br>
+<code>
+var person = { <br>
+first_name: "John", <br>
+last_name: "Doe", <br>
+age: 25 <br>
+}; <br>
+
+var text = "" <br>
+var x; <br>
+for (x in person) { <br>
+	text += person[x]; <br>
+}
+</code>
+</p>
+
+
+<p>
+<span class='sub-head'>Iterating through Each</span> <br>
+<code>
+var a = ['a','b','c']; <br>
+a.forEach(function(entry){ <br>
+console.log(entry); <br> 
+}); <br>
+</code>
+</p>
+
+<!-- Paired with methods -->
+
+<p>
+<span class='sub-head'>Functions</span> <br>
+<code>
+	function hello() { <br>
+	console.log("hello"); <br>
+	} <br>
+</code>
+</p>
+
+<!-- Paired with hashes -->
+
+<p>
+<span class='sub-head'>Objects</span> <br>
+<code>var hash_name = { hash_key: hash_value} <br> </code>
+Access by using: <br>
+hash_name.hash_key —-> hash_value <br>
+</p>
+</div>
+
+<!-- Line Break -->
+<div id="footer">
+<h2>Similarities</h2>
+<p>
+Object-Oriented <br>
+For Loops <br>
+While Loops <br>
+Break Loops<br>
+Arrays <br>
+</p1>
+</div>
+</body>
+
+</html>
