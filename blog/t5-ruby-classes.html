@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Real World Classes</title>
-	<link href="blog-post-css-stylesheet.css" type="text/css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Real World Classes</title>
+  <link href="blog-post-css-stylesheet.css" type="text/css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 </head>
-
-<header>
-		<table class="toolbar">
-		<tr>
-		<!--<td>Search Bar</td> Add this later-->
-	      	 <td><a href=https://www.linkedin.com/profile/preview?vpa=pub&locale=en_US><img src="http://guardianscifi.com/rw_common/themes/atlas/images/linkedin-icon-dark.png" width="30" height="30"></td> 
-     		 <td><a href=https://www.twitter.com/James_Min_Lee><img src="http://www.musiciansoncall.org/images/content/pagebuilder/icons_social_gr_twitter.png" width="30" height="30"></td> 
-      		<td><a href="mailto:jameslee236@gmail.com"><img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Email-icon.png" width="30" height="30"></td> 
-	    <!--add github link: https://github.com/jameslee236 -->
-		</tr>
-	</table>
-
-</header>
-
 <body>
-<h1>Real World Classes</h1>
-<h2>08.30.15</h2>
+<!-- Mandatory -->
+<h1>
+  Sales to Code
+  <ul id="navbar">
+    <li><a href=jameslee236.github.io/aboutme.html class="header">AboutMe</li>
+    <li><a href=https://www.linkedin.com/profile/preview?vpa=pub&locale=en_US>LinkedIn</li>
+    <li><a href=https://www.twitter.com/James_Min_Lee>Twitter</li>
+    <li><a href="mailto:jameslee236@gmail.com">Email</li>
+    <li><a href="https://github.com/jameslee236">Github</a>
+    </li>
+  </ul>
+</h1>
+
+
+<h2>
+  Real World Classes
+</h2>
+  <div id="main_img">
+    <img src="Images/reflection.jpg" alt="Reflection">
+  </div>
+<h3>08.30.15</h3>
 
 <p>
 	This week, on the technical side, we focused a lot on the use of classes in Ruby. Simply put, classes are used to group objects with similar attributes or behaviors together. For instance, dogs all bark, eat, and sleep. They have a name, a breed, and a gender. All of those things can be categorized within a class. Another example is a baseball player. They have a name, a field position, and a team. They run, bat, and play defense. All of these things can be defined within a class.
@@ -30,86 +36,91 @@
 	So let's just use a hypothetical class so that I can break down what goes into building a class. Using the baseball example, let's create the LA Dodgers. They need all the help now after getting no-hit for the second time in two days. Maybe this will help them with a postseason run!
 </p>
 <p>
-	The first thing I need to do is create the class. This is done by simply using the word class and the name, like so:
-
-		'''
+	The first thing I need to do is create the class. This is done by simply using the word class and the name, like so: <br>
+	<br>
+		<code>
 		class Dodgers
-		'''
+		</code> <br>
+		<br>
 	
 	Then, we can use a instance method in order to initiate this class. I know, I threw a big word out there but in simple terms, an instance method triggers when the class is called upon later. It's like an action that's automatically triggered by default.
 
-	Instance methods are called by using:
-		'''
+	Instance methods are called by using: <br>
+		<br>
+		<code>
 		def initialize(name,position,bat_avg)
-		'''
+		</code> <br>
+		<br>
 	def is the way that you define a method,initialize is the term that allows you to create an initialize it, and the argument is passed as soon as the method is initialized. Simple? Hope so!
 	
-	Then we can add a couple attributes that will be used for other methods within the class, specifically the ones that were passed through the argument. This is done like this:
-
-		'''
-		@name = name
-		@position = position
-		@bat_avg = bat_avg
-		'''
+	Then we can add a couple attributes that will be used for other methods within the class, specifically the ones that were passed through the argument. This is done like this: <br>
+		<br>
+		<code>
+		@name = name <br>
+		@position = position <br>
+		@bat_avg = bat_avg <br>
+		</code>
+		<br>
 
 	Now what did I do there exactly? The @ sign allows us to signify that these variables passed through the argument like name and position are actually instance variables. Variables are often confined in terms of how "far" they can be used. Usually it means that variables are only accessible within the method that we've created. Instance variables broaden that scope and allow us to call it multiple times throughout the class, in between methods, etc. So now we have a class, an instance method, and some instance variables. Let's move on to adding some attributes.
 
 </p>
 <p>
-	We can create attributes by creating more methods. So far our code looks like this:
-
-		'''
-		class Dodgers
-
-			def initialize(name, position, bat_avg)
-				@name = name
-				@postion = position
-				@bat_avg = bat_avg
-			end
-		'''
+	We can create attributes by creating more methods. So far our code looks like this: <br>
+		<br>
+		<code>
+		class Dodgers <br>
+		<br>
+			def initialize(name, position, bat_avg) <br>
+				@name = name <br>
+				@postion = position <br>
+				@bat_avg = bat_avg <br>
+			end <br>
+		</code> <br>
 	
-	Let's add onto this by creating a method for hitting. 
+	Let's add onto this by creating a method for hitting. <br>
+	<br>
+		<code>
+		def hitting <br>
+			if @bat_avg > .275 <br>
+				puts "I'm going to hit it out of the park!" <br>
+			else <br>
+				puts "Looks like I might strike out again" <br>
+			end<br>
+		</code><br>
 
-		'''
-		def hitting
-			if @bat_avg > .275
-				puts "I'm going to hit it out of the park!"
-			else 
-				puts "Looks like I might strike out again"
-			end
-		'''
-
-	So much of hitting is based off confidence. We used an if/else statement based on the players batting average to dictate the outcome. So for instance, if we used Adrian Gonzales with a .286 batting average, he's coming in with an expectation to hit it out of the park. Jimmy Rollins with his .222 batting average... not so much. When we later call this method, we'll be able to see how this works. Let's add one more fun one:
-
-		'''
-		def teasing
-			puts "We want a batter, not a broken ladder!!"
-		end
-		''' 
-	
-	Lastly, I'll create a method that uses the instance variables. In lieu of Vin Scully committing to his 67th year in the broadcast booth this week, I'll create one in which he announces the player.
-
-		'''
-		def vin
-			puts "Now up to bat for the Dodgers, batting #{@bat_avg}, playing #{@position}, it is #{@name}!!"
-		end
+	So much of hitting is based off confidence. We used an if/else statement based on the players batting average to dictate the outcome. So for instance, if we used Adrian Gonzales with a .286 batting average, he's coming in with an expectation to hit it out of the park. Jimmy Rollins with his .222 batting average... not so much. When we later call this method, we'll be able to see how this works. Let's add one more fun one: <br>
+		<br>
+		<code>
+		def teasing <br>
+			puts "We want a batter, not a broken ladder!!" <br>
+		end <br>
+		</code> <br>
+ 	
+	Lastly, I'll create a method that uses the instance variables. In lieu of Vin Scully committing to his 67th year in the broadcast booth this week, I'll create one in which he announces the player. <br>
+		<br>
+		<code>
+		def vin <br>
+			puts "Now up to bat for the Dodgers, batting #{@bat_avg}, playing #{@position}, it is #{@name}!!" <br>
+		end <br>
+		</code> <br>
 
 	Other than the announcement sounding like a WWE or UFC hype-cast, this looks pretty good. We're able to utilize the instance variables that we had defined at the top in the vin method because we had increased the scope of each variable by using the @ sign.
 
 </p>
 <p>
-	We now understand how to create a class, use instance variables and methods, and to create a method within the class. Now let's put it all together. We do this first by calling the class:
+	We now understand how to create a class, use instance variables and methods, and to create a method within the class. Now let's put it all together. We do this first by calling the class: <br>
+		<br>
+		<code>
+		LA = Dodgers.new(Adrian Gonzales, 1B, .286) <br>
+		</code> <br>
 
-		'''
-		LA = Dodgers.new(Adrian Gonzales, 1B, .286)
-		'''
-
-	By using the .new method, we've called the Dodgers class and passed in the arguments (in this case the player). Now we can use everything inside the class:
-		
-		'''
-		LA.hitting
-		LA.teasing
-		'''
+	By using the .new method, we've called the Dodgers class and passed in the arguments (in this case the player). Now we can use everything inside the class: <br>
+		<br>
+		<code>
+		LA.hitting <br>
+		LA.teasing <br>
+		</code> <br>
 
 	This will output, "I'm going to hit it out of the park!" because his batting average is more than .275. The second one will print out "We want a batter, not a broken ladder!!" Now things just got personal. We can create an infinite number of methods that can be used with this class. We can also throw in the entire Dodgers lineup and add some different methods for pitching but that's something I might leave for once they make the playoffs. 
 </p>

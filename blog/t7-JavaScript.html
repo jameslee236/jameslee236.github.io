@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>JavaScript Objects</title>
-	<link href="blog-post-css-stylesheet.css" type="text/css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Ruby Hashes vs. JS Objects</title>
+  <link href="blog-post-css-stylesheet.css" type="text/css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 </head>
-
-<header>
-		<table class="toolbar">
-		<tr>
-		<!--<td>Search Bar</td> Add this later-->
-	      	 <td><a href=https://www.linkedin.com/profile/preview?vpa=pub&locale=en_US><img src="http://guardianscifi.com/rw_common/themes/atlas/images/linkedin-icon-dark.png" width="30" height="30"></td> 
-     		 <td><a href=https://www.twitter.com/James_Min_Lee><img src="http://www.musiciansoncall.org/images/content/pagebuilder/icons_social_gr_twitter.png" width="30" height="30"></td> 
-      		<td><a href="mailto:jameslee236@gmail.com"><img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Email-icon.png" width="30" height="30"></td> 
-	    <!--add github link: https://github.com/jameslee236 -->
-		</tr>
-	</table>
-
-</header>
-
 <body>
-<h1>Ruby Hashes vs. JavaScript Objects</h1>
-<h2>09.13.15</h2>
+<!-- Mandatory -->
+<h1>
+  Sales to Code
+  <ul id="navbar">
+    <li><a href=jameslee236.github.io/aboutme.html class="header">AboutMe</li>
+    <li><a href=https://www.linkedin.com/profile/preview?vpa=pub&locale=en_US>LinkedIn</li>
+    <li><a href=https://www.twitter.com/James_Min_Lee>Twitter</li>
+    <li><a href="mailto:jameslee236@gmail.com">Email</li>
+    <li><a href="https://github.com/jameslee236">Github</a>
+    </li>
+  </ul>
+</h1>
+
+
+<h2>
+  Ruby Hashes vs. JS Objects
+</h2>
+  <div id="main_img">
+    <img src="Images/reflection.jpg" alt="Reflection">
+  </div>
+<h3>09.13.15</h3>
 
 <p>
 	This week at DBC, we made the switch into JavaScript. This has been exciting for me as it's helped me solidify concepts I've learned in Ruby and has given me an opportunity to start from the beginning. However, this has also been challenging in some regards because the terminology is different. One instance in which this is the case is between JavaScript objects and Ruby hashes. They are both similar in terms of functionality - they both hold data and organize it so that it can be used throughout your code. They are unique in that they can hold key/value pairs. For example, if you wanted to store someone's name, age, school, and major, you'd use an object or hash. 
 </p>
 <p>
-	This is how you do this in JavaScript and how you access it:
+	This is how you do this in JavaScript and how you access it: <br>
+	<br>
+	<code>
+	var Object = { <br>
+		name: "James" <br>
+		age: 23 <br>
+		school: "UC Berkeley" <br>
+		major: "Economics" <br>
+	} <br>
+	<br>
+	output=> Object["age"] = 23 <br>
+	</code> <br>
 
-	```JavaScript
-	var Object = {
-		name: "James"
-		age: 23
-		school: "UC Berkeley"
-		major: "Economics"
-	}
-	```
-	output=> Object["age"] = 23
-
-
-	This is how you would do the same thing in Ruby:
-
-	```Ruby
-	hash = { name: "James", age: 23, school: "UC Berkeley", major: "Economics"}
-	```
-	output => hash[:age] = 23
+	This is how you would do the same thing in Ruby: <br>
+	<br>
+	<code>
+	hash = { 
+	name: "James", 
+	age: 23, 
+	school: "UC Berkeley", <br>
+	major: "Economics" <br>
+	} <br>
+	<br>
+	output => hash[:age] = 23 <br>
+	</code>
 </p>
 <p>
 	The differences are noticeable through the two examples but they are essentially doing the same thing. You define a variable in both. You use 'var' in JavaScript but not in Ruby. The way you access the values are different as well but not by much. The real difference is in the built-in methods. Ruby is significantly easier to use because it has built-in sorting methods and other ways in which to manipulate the data within the hash. JavaScript on the other hand has fewer methods and is therefore harder for a beginner to understand. 

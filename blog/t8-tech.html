@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Recursion</title>
-	<link href="blog-post-css-stylesheet.css" type="text/css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Recursion</title>
+  <link href="blog-post-css-stylesheet.css" type="text/css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 </head>
-
-<header>
-		<table class="toolbar">
-		<tr>
-		<!--<td>Search Bar</td> Add this later-->
-	      	 <td><a href=https://www.linkedin.com/profile/preview?vpa=pub&locale=en_US><img src="http://guardianscifi.com/rw_common/themes/atlas/images/linkedin-icon-dark.png" width="30" height="30"></td> 
-     		 <td><a href=https://www.twitter.com/James_Min_Lee><img src="http://www.musiciansoncall.org/images/content/pagebuilder/icons_social_gr_twitter.png" width="30" height="30"></td> 
-      		<td><a href="mailto:jameslee236@gmail.com"><img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Email-icon.png" width="30" height="30"></td> 
-	    <!--add github link: https://github.com/jameslee236 -->
-		</tr>
-	</table>
-
-</header>
-
 <body>
-<h1>Recursion</h1>
-<h2>09.19.15</h2>
+<!-- Mandatory -->
+<h1>
+  Sales to Code
+  <ul id="navbar">
+    <li><a href=jameslee236.github.io/aboutme.html class="header">AboutMe</li>
+    <li><a href=https://www.linkedin.com/profile/preview?vpa=pub&locale=en_US>LinkedIn</li>
+    <li><a href=https://www.twitter.com/James_Min_Lee>Twitter</li>
+    <li><a href="mailto:jameslee236@gmail.com">Email</li>
+    <li><a href="https://github.com/jameslee236">Github</a>
+    </li>
+  </ul>
+</h1>
+
+
+<h2>
+  Recursion
+</h2>
+  <div id="main_img">
+    <img src="Images/reflection.jpg" alt="Reflection">
+  </div>
+<h3>09.19.15</h3>
 
 <p>
 	Recursion is an alternative method to solving problems in programming. It's something that we haven't yet covered at DBC but one that I've consistently heard about from my computer science friends who geek out about tough challenges. I was curious and so decided to do some research regarding what recursion is and when it is beneficial. 
@@ -29,67 +35,70 @@
 <p>
 	According to the Ruby Bastards Book, "at its most basic concept, recursion is a division of labor". Recursion is often used to take a big problem and break it down into smaller pieces. It does this by calling itself within the function. The easiest way to explain this confusing concept is to use an example:
 
-	We can solve 1+2+3+4 by typing it out like this:
-
-		```Ruby
+	We can solve 1+2+3+4 by typing it out like this: <br>
+	<br>
+		<code>
 		(1 + 2 + 3 + 4)
-		```
-
-	But, we can also break it down as smaller problems that amount to the same thing:
-
-		```Ruby
-		((1 + 2 + 3) + 4)
-		(((1 + 2) + 3) + 4)
-		((((1)+ 2) + 3) + 4)
-		```
+		</code> <br>
+	<br>
+	But, we can also break it down as smaller problems that amount to the same thing:<br>
+		<br>
+		<code>
+		((1 + 2 + 3) + 4) <br>
+		(((1 + 2) + 3) + 4) <br>
+		((((1)+ 2) + 3) + 4) <br>
+		</code>
 </p>
 <p>
 	Essentially, we've broken down what was once one problem, (1 + 2 + 3 + 4) into 4 smaller problems.
-	Now, if we were to create a method called sum_upto that adds all the numbers up to whatever number is passed through as an argument, we can see how recursion might work:
+	Now, if we were to create a method called sum_upto that adds all the numbers up to whatever number is passed through as an argument, we can see how recursion might work: <br>
+		<br>
+		
 </p>
 <p>
-	```Ruby
-	def sum_upto(n)
-	return 1 			   if n == 1 (basecase)
-	return sum_upto(1) + 2 if n == 2
-	return sum_upto(2) + 3 if n == 3
-	return sum_upto(3) + 4 if n == 4
-
-	sum_upto 1 # => 1
-	sum_upto 2 # => 3
-	sum_upto 3 # => 6
-	sum_upto 4 # => 10
-	```
+	<code>
+	def sum_upto(n) <br>
+	return 1 			   if n == 1 (basecase) <br>
+	return sum_upto(1) + 2 if n == 2 <br>
+	return sum_upto(2) + 3 if n == 3 <br>
+	return sum_upto(3) + 4 if n == 4 <br>
+ 	<br>
+	sum_upto 1 # => 1 <br>
+	sum_upto 2 # => 3 <br>
+	sum_upto 3 # => 6 <br>
+	sum_upto 4 # => 10 <br>
+	</code>
 </p>
 <p>
-	We've written out the code that's being executed for each instance of sum_upto until it reaches 4. This helps illustrate what is going on but is highly unscalable. If you wanted to find out what the sum up to 100 was, you'd have to write 100 more lines of code! However, if we look at the code again, we can see that a pattern is forming. Essentially, the code looks like this:
-
-	```Ruby
-	def sum_upto(n)
-	return 1 			   if n == 1 (basecase)
-	return sum_upto(n-1) + n if n == 2
-	return sum_upto(n-1) + n if n == 3
-	return sum_upto(n-1) + n if n == 4
-	```
+	We've written out the code that's being executed for each instance of sum_upto until it reaches 4. This helps illustrate what is going on but is highly unscalable. If you wanted to find out what the sum up to 100 was, you'd have to write 100 more lines of code! However, if we look at the code again, we can see that a pattern is forming. Essentially, the code looks like this: <br>
+	<br>
+	<code>
+	def sum_upto(n) <br>
+	return 1 			   if n == 1 (basecase) <br>
+	return sum_upto(n-1) + n if n == 2 <br>
+	return sum_upto(n-1) + n if n == 3 <br>
+	return sum_upto(n-1) + n if n == 4 <br>
+	</code> <br>
 </p>
 <p>
 
-	In all instances after 1, the method follows the same pattern. Therefore, we can refactor it to be clean, orderly, and useful.
-
-	```Ruby
-	def sum_upto(n)
-		return 1 if n == 1
-		return sum_upto(n-1) + n
-	en
-	`d``
-	Now, I wrote in parenthesis that the return 1 value is called the basecase. Without this, the method falls into error. Here's why:
-
-	```Ruby
-	return sum_upto(1-1) + 1
-	return sum_upto(0) + 1
-	return sum_upto(0-1) + 1
-	return sum_upto(-1) + 1
-	```
+	In all instances after 1, the method follows the same pattern. Therefore, we can refactor it to be clean, orderly, and useful. <br>
+	<br>
+	<code>
+	def sum_upto(n) <br>
+		return 1 if n == 1 <br>
+		return sum_upto(n-1) + n <br>
+	end <br>
+	</code> <br>
+	<br>
+	Now, I wrote in parenthesis that the return 1 value is called the basecase. Without this, the method falls into error. Here's why: <br>
+	<br>
+	<code>
+	return sum_upto(1-1) + 1 <br>
+	return sum_upto(0) + 1 <br>
+	return sum_upto(0-1) + 1 <br>
+	return sum_upto(-1) + 1 <br>
+	</code> <br>
 </p>
 <p>
 	This quickly becomes a downward spiral and an endless loop that causes many errors in your program. 
